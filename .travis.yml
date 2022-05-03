@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.10"
+
+services:
+  - "docker"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python -m unittest discover
