@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Customer Deletion Form</title>
+</head>
+<body>
+<h1>Customer Deletion Form</h1>
+<form method="POST" action="{{ url_for('delete_form') }}">
+    <fieldset style="width:500px">
+        <legend>Please fill in the Customer ID: </legend>
+            {{ form.csrf_token }}
+            {{ form.custom_id.label }}
+            {{ form.custom_id }}
+            <ul>
+                {% for error in form.custom_id.errors %}
+                <li style="color:red">{{ error }}</li>
+                {% endfor %}
+            </ul>
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit ID">
+    <button type="button" onclick="window.location.href='/home'">Home</button>
+</form>
+</body>
+</html>

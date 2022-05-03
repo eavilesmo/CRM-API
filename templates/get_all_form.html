@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>All Customers</title>
+</head>
+<body>
+<h1>List of all customers created</h1>
+<form method="POST" action="{{ url_for('get_all_form') }}">
+    <fieldset style="width:500px">
+        {{ form.csrf_token }}
+        {% for key, value in form.items() %}
+            <h2>ID: {{key}}</h2>
+            <h2>Name: {{ value["name"] }}</h2>
+            <h2>Surname: {{ value["surname"] }}</h2>
+            <h2>Email: {{ value["email"] }}</h2>
+            <h2>Birthdate: {{ value["birthdate"] }}</h2>
+        {% endfor %}
+    </fieldset>
+    <br>
+    <button type="button" onclick="window.location.href='/home'">Home</button>
+</form>
+</body>
+</html>
